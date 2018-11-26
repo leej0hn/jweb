@@ -181,6 +181,17 @@
                 </configuration>
                 <!-- 运行命令 mvn clean package docker:build 打包并生成docker镜像 -->
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude> **/application.yml/**</exclude>
+                        <exclude> **/application.yml.example/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
