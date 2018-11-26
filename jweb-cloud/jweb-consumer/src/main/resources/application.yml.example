@@ -1,0 +1,9 @@
+server:
+  port: 2000
+
+logging:
+  file: /logs/jweb-eureka-consumer
+  config: classpath:jweb-logback.xml
+  level.com.redscraf.jweb: DEBUG
+
+spring.application.name: jweb-eureka-consumer

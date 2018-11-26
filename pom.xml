@@ -11,6 +11,7 @@
         <module>jweb-parent</module>
         <module>jweb-common</module>
         <module>jweb-admin</module>
+        <module>jweb-cloud</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,25 @@
+server:
+  port: 1000
+
+logging:
+  file: /logs/jweb-eureka
+  config: classpath:jweb-logback.xml
+  level.com.redscraf.jweb: DEBUG
+
+spring:
+  application:
+    name: jweb-eureka
+
+#注册中心
+eureka:
+  client:
+    # 不要向注册中心注册自己,作为客户端时开启
+    register-with-eureka: false
+    # 表示不去检索其他的服务，因为服务注册中心本身的职责就是维护服务实例，它也不需要去检索其他服务
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

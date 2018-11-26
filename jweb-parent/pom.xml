@@ -17,6 +17,7 @@
     <properties>
         <jweb.version>1.0</jweb.version>
         <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+        <spring.cloud.version>Finchley.SR1</spring.cloud.version>
 
         <junit.version>4.12</junit.version>
         <jedis.version>2.9.0</jedis.version>
@@ -60,7 +61,20 @@
                 <artifactId>jweb-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.redscraf.jweb</groupId>
+                <artifactId>jweb-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- model end   -->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
