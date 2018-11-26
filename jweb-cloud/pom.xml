@@ -17,6 +17,7 @@
         <module>jweb-feign</module>
         <module>jweb-server</module>
         <module>jweb-consumer</module>
+        <module>jweb-zuul</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,26 @@
+server:
+  port: 8889
+
+logging:
+  file: /logs/jweb-zuul
+  config: classpath:jweb-logback.xml
+  level.com.redscraf.jweb: DEBUG
+
+spring.application.name: jweb-zuul
+
+
+# 注册中心地址 -此为单机模式
+eureka.client.service-url.defaultZone: http://127.0.0.1:1000/eureka
+# 启用ip配置 这样在注册中心列表中看见的是以ip+端口呈现的
+eureka.instance.prefer-ip-address: true
+# 实例名称  最后呈现地址：ip:15678
+eureka.instance.instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+## 服务发现模式
+# 路由地址
+zuul.routes.myEureka.path: /eureka-server/**
+#为具体服务的名称
+zuul.routes.myEureka.service-id: jweb-eureka-server
+
+## 停用默认的异常处理器SendErrorFilter
+zuul.SendErrorFilter.error.disable: true
