@@ -47,7 +47,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUserEntity> i
 		if(userId.equals(Constant.SUPER_ADMIN)){
 			return baseMapper.queryRootUser();
 		}
-		return baseMapper.queryUserMenuId(userId);
+		return baseMapper.queryAllMenuId(userId);
 	}
 
 	@Override
