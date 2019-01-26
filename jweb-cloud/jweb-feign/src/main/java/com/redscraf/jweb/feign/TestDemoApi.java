@@ -15,6 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/api")
 public interface TestDemoApi {
 
-    @RequestMapping(value = "/test" , method = RequestMethod.GET)
+    @RequestMapping(value = "/test" , method = RequestMethod.POST)
     String demoTest();
 }
